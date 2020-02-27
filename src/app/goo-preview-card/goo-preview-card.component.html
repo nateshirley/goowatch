@@ -1,0 +1,28 @@
+<div class="container">
+  <div *ngFor="let guru of gurus" class="goo-loop">
+    <div class="card-wrap">
+      <a
+        routerLink="/detail/{{ guru.id }}"
+        class="row goo-preview-card align-self-center"
+      >
+        <div class="col-3 no-gutters preview-card-left">
+          <div class="preview-card-left-content">
+            <img
+              src="../assets/pics/nomadmil.jpg"
+              alt="Miles"
+              class="preview-card-avatar"
+            />
+            <div class="preview-card-score">&#8595;{{ guru.score }}&#8593;</div>
+          </div>
+        </div>
+        <div class="col-9 no-gutters preview-card-right">
+          <div class="preview-card-right-header">
+            <span class="preview-card-name name-select">{{ guru.name }}</span>
+            <span class="preview-card-category">{{ guru.category }}</span>
+          </div>
+          <p class="preview-card-description">{{ guru.description }}</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
