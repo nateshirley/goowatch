@@ -1,10 +1,7 @@
 <div *ngIf="guru" class="center">
   <div class="container">
     <div class="card-wrap goo-loop">
-      <a
-        routerLink="/detail/{{ guru.id }}"
-        class="row goo-preview-card align-self-center"
-      >
+      <div class="row goo-preview-card align-self-center">
         <div class="col-3 no-gutters preview-card-left">
           <div class="preview-card-left-content">
             <img
@@ -15,6 +12,7 @@
             <div class="preview-card-score">&#8595;{{ guru.score }}&#8593;</div>
           </div>
         </div>
+
         <div class="col-9 no-gutters preview-card-right">
           <div>
             <div class="preview-card-right-header">
@@ -26,22 +24,25 @@
           <div class="icon-row">
             <div class="icons">
               <span class="icon-span"
-                ><a routerLink="/">
+                ><a href="https://www.youtube.com/" target="_blank">
                   <img
                     src="../assets/icons/youtube1.png"
                     alt="YouTube"
                     class="icon"/></a
               ></span>
-              <span
-                ><img
-                  src="../assets/icons/link.png"
-                  alt="website"
-                  class="icon-link"
-              /></span>
+              <span class="icon-span"
+                ><a href="https://nomadaccelerator.carrd.co/" target="_blank"
+                  ><img
+                    src="../assets/icons/link.png"
+                    alt="website"
+                    class="icon-link"/></a
+              ></span>
             </div>
           </div>
         </div>
-      </a>
+      </div>
     </div>
+    <!--     comment component -->
+    <app-comment-card></app-comment-card>
   </div>
 </div>

@@ -18,3 +18,8 @@ JavaScript: Add at least five different dynamic behavior using your own JavaScri
 - Implement and use at least one anonymous function
     - Your anonymous function may be self-invoked or invoked as part of an expression ("function expression").
 - Implement and use at least one arrow function
+
+dynamic: 
+home page: click arrow to change score
+comment page: comment submit
+form submit: populate guru card with content as user types

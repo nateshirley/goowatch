@@ -1,0 +1,56 @@
+.comment-cards-outer {
+  padding-top: 10px;
+}
+.comment-loop {
+  padding-top: 10px;
+}
+.comment-text {
+  border-radius: 6px;
+  border: 0.5px solid rgb(138, 138, 138);
+  font-size: 12px;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+.comment-button {
+  font-size: 10px;
+  float: right;
+  margin-top: 4px;
+  margin-right: 10px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.submit-div {
+  height: 40px;
+}
+.comment-card {
+  width: 570px;
+  background-color: white;
+  border-radius: 6px;
+  border: 2px solid rgb(138, 138, 138);
+  color: black;
+  padding: 0px;
+  margin: 0px;
+}
+.comment-user {
+  float: left;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+  font-size: 12px;
+  font-weight: 600;
+  padding-top: 12px;
+}
+.comment-card-row {
+  margin-left: 18px;
+  margin-right: 18px;
+}
+.user {
+  height: 30px;
+}
+.comment {
+  padding-top: 5px;
+  text-align: left;
+  padding-bottom: 12px;
+  font-size: 12px;
+}

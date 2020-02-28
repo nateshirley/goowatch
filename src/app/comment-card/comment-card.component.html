@@ -1,0 +1,46 @@
+<div class="comment-cards-outer">
+  <div class="form-group comment-submit-group">
+    <textarea
+      class="form-control comment-text"
+      id="commentTextArea"
+      rows="2"
+      [(ngModel)]="thisComment"
+    ></textarea>
+    <div class="submit-div">
+      <button
+        type="button"
+        class="btn btn-outline-secondary comment-button"
+        (click)="addComment(thisComment)"
+      >
+        COMMENT
+      </button>
+    </div>
+  </div>
+  <div *ngIf="frontComments.length > 0">
+    <div *ngFor="let f of frontComments">
+      <div class="comment-loop">
+        <div class="comment-card">
+          <div class="row comment-card-row user-row">
+            <div class="comment-user">guest</div>
+          </div>
+          <div class="row comment-card-row">
+            <div class="comment">{{ f }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div *ngFor="let c of comments">
+    <div class="comment-loop">
+      <div class="comment-card">
+        <div class="row comment-card-row user-row">
+          <div class="comment-user">{{ c.user }}</div>
+        </div>
+        <div class="row comment-card-row">
+          <div class="comment">{{ c.comment }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
