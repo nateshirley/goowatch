@@ -7,13 +7,15 @@ import { AppComponent } from "./app.component";
 import { GooPreviewCardComponent } from "./goo-preview-card/goo-preview-card.component";
 import { PreviewCardFeedComponent } from "./preview-card-feed/preview-card-feed.component";
 import { GooDetailComponent } from './goo-detail/goo-detail.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GooPreviewCardComponent,
     PreviewCardFeedComponent,
-    GooDetailComponent
+    GooDetailComponent,
+    NavbarComponent
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],

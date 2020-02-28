@@ -3,7 +3,7 @@ import { Guru } from "./interfaces/guru";
 export const mockGurus: Guru[] = [
   {
     id: 1,
-    name: "Nomad Millionaire",
+    name: "Nomad Millionaire 1",
     score: 435,
     category: "Amazon FBA",
     description:
