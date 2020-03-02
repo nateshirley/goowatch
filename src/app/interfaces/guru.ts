@@ -5,4 +5,6 @@ export interface Guru {
   category: string;
   description: string;
   imgLink: string;
+  youtube?: string;
+  website?: string;
 }

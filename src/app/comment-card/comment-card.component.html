@@ -7,13 +7,18 @@
       [(ngModel)]="thisComment"
     ></textarea>
     <div class="submit-div">
-      <button
-        type="button"
-        class="btn btn-outline-secondary comment-button"
-        (click)="addComment(thisComment)"
+      <small id="commentError" class="form-text text-muted error-msg"
+        >{{ errorMsg }}
+        <span>
+          <button
+            type="button"
+            class="btn btn-secondary comment-button"
+            (click)="addComment(thisComment)"
+          >
+            COMMENT
+          </button></span
+        ></small
       >
-        COMMENT
-      </button>
     </div>
   </div>
   <div *ngIf="frontComments.length > 0">

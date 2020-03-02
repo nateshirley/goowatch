@@ -14,15 +14,15 @@
 .comment-button {
   font-size: 10px;
   float: right;
-  margin-top: 4px;
-  margin-right: 10px;
+
+  margin-right: 8px;
   padding-top: 3px;
   padding-bottom: 3px;
   padding-left: 5px;
   padding-right: 5px;
 }
 .submit-div {
-  height: 40px;
+  height: 30px;
 }
 .comment-card {
   width: 570px;
@@ -53,4 +53,8 @@
   text-align: left;
   padding-bottom: 12px;
   font-size: 12px;
+}
+.error-msg {
+  text-align: left;
+  padding-left: 8px;
 }

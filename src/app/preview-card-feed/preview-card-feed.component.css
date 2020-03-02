@@ -1,3 +1,18 @@
 .center {
   text-align: center;
 }
+.feed-header {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+  font-size: 1.5em;
+  text-align: left;
+  padding-left: 4px;
+  margin-top: 15px;
+  font-weight: 500;
+}
+.container {
+  display: inline-block;
+  width: 570px;
+  padding: 0px;
+  margin: 0px;
+}
