@@ -31,9 +31,15 @@ export class CommentCardComponent implements OnInit {
   ];
   frontComments = [];
   thisComment = "";
+  errorMsg = "";
   addComment = comment => {
-    this.frontComments.push(comment);
-    this.thisComment = "";
+    if (comment.length > 0) {
+      this.frontComments.unshift(comment);
+      this.thisComment = "";
+      this.errorMsg = "";
+    } else {
+      this.errorMsg = "Type a comment.";
+    }
   };
   constructor() {}
 

@@ -1,0 +1,111 @@
+<script>
+  window.onload = function() {
+    document.getElementById("guruName").focus();
+    console.log("loaded");
+  };
+</script>
+<div class="center">
+  <div class="container">
+    <div class="submit-header">Submit for Review</div>
+    <div class="card-wrap goo-loop">
+      <div class="row goo-preview-card align-self-center">
+        <div class="col-3 no-gutters preview-card-left">
+          <div class="preview-card-left-content">
+            <img
+              src="../assets/pics/default-hand.png"
+              alt="new guru"
+              class="preview-card-avatar"
+            />
+            <div class="preview-card-score">
+              &#8595;{{ newGuru.score }}&#8593;
+            </div>
+          </div>
+        </div>
+
+        <div class="col-9 no-gutters preview-card-right">
+          <div>
+            <div class="preview-card-right-header">
+              <span class="preview-card-name name-select">{{
+                newGuru.name
+              }}</span>
+              <span class="preview-card-category">{{ newGuru.category }}</span>
+            </div>
+            <p class="preview-card-description">{{ newGuru.description }}</p>
+          </div>
+          <div class="icon-row">
+            <div class="icons">
+              <span class="icon-span"
+                ><a [href]="newGuru.youtube" target="_blank">
+                  <img
+                    src="../assets/icons/youtube1.png"
+                    alt="YouTube"
+                    class="icon"/></a
+              ></span>
+              <span class="icon-span"
+                ><a [href]="newGuru.website" target="_blank"
+                  ><img
+                    src="../assets/icons/link.png"
+                    alt="website"
+                    class="icon-link"/></a
+              ></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ADD GURU FORM -->
+    <form class="add-form">
+      <div class="form-group">
+        <label class="add-guru-input-label">Display Name</label>
+        <input
+          autofocus
+          type="text"
+          id="guruName"
+          class="form-control display-name-input"
+          [(ngModel)]="newGuru.name"
+          name="displayName"
+        />
+      </div>
+      <div class="form-group">
+        <label class="add-guru-input-label">Category</label>
+        <select
+          class="form-control input-short"
+          [(ngModel)]="newGuru.category"
+          name="category"
+        >
+          <option *ngFor="let c of categories">{{ c }}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="add-guru-input-label">Description</label>
+        <textarea
+          type="text"
+          class="form-control"
+          [(ngModel)]="newGuru.description"
+          name="description"
+        ></textarea>
+      </div>
+      <div class="form-group">
+        <label class="add-guru-input-label">YouTube</label>
+        <input
+          type="url"
+          class="form-control input-short"
+          [(ngModel)]="newGuru.youtube"
+          name="youtube"
+        />
+      </div>
+      <div class="form-group">
+        <label class="add-guru-input-label">Website</label>
+        <input
+          type="url"
+          class="form-control input-short"
+          [(ngModel)]="newGuru.website"
+          name="youtube"
+        />
+      </div>
+    </form>
+    <button type="button" class="btn btn-outline-secondary submit-button">
+      SUBMIT
+    </button>
+  </div>
+</div>
