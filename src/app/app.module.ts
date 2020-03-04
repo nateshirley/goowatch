@@ -11,7 +11,7 @@ import { NavbarComponent } from "./navbar/navbar.component";
 import { CommentCardComponent } from "./comment-card/comment-card.component";
 
 import { AddGuruComponent } from "./add-guru/add-guru.component";
-import { FooterComponent } from './footer/footer.component';
+import { FooterComponent } from "./footer/footer.component";
 
 @NgModule({
   declarations: [
