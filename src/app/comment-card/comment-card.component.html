@@ -1,40 +1,42 @@
-<div class="comment-cards-outer">
-  <div class="form-group comment-submit-group">
-    <textarea
-      class="form-control comment-text"
-      id="commentTextArea"
-      rows="2"
-      [(ngModel)]="thisComment"
-    ></textarea>
-    <div class="submit-div">
-      <small class="form-text text-muted error-msg"
-        ><span id="commentError"></span>
-        <span>
-          <button
-            type="button"
-            class="btn btn-secondary comment-button"
-            (click)="submitComment(thisComment)"
+<div class="container">
+  <div class="comment-cards-outer">
+    <div class="form-group comment-submit-group">
+      <textarea
+        class="form-control comment-text"
+        id="commentTextArea"
+        rows="2"
+        [(ngModel)]="thisComment"
+      ></textarea>
+      <div class="submit-div">
+        <small class="form-text text-muted error-msg"
+          ><span id="commentError"></span>
+          <span>
+            <button
+              type="button"
+              class="btn btn-secondary comment-button"
+              (click)="submitComment(thisComment)"
+            >
+              COMMENT
+            </button></span
           >
-            COMMENT
-          </button></span
-        >
-      </small>
+        </small>
+      </div>
     </div>
-  </div>
-  <!--  <div *ngIf="frontComments.length > 0">
+    <!--  <div *ngIf="frontComments.length > 0">
     <div *ngFor="let f of frontComments"> -->
-  <div>
-    <div id="recentComment"></div>
-  </div>
+    <div>
+      <div id="recentComment"></div>
+    </div>
 
-  <div *ngFor="let c of comments">
-    <div class="comment-loop">
-      <div class="comment-card">
-        <div class="row comment-card-row user-row">
-          <div class="comment-user">{{ c.user }}</div>
-        </div>
-        <div class="row comment-card-row">
-          <div class="comment">{{ c.comment }}</div>
+    <div *ngFor="let c of comments">
+      <div class="comment-loop">
+        <div class="comment-card">
+          <div class="row comment-card-row user-row">
+            <div class="comment-user">{{ c.user }}</div>
+          </div>
+          <div class="row comment-card-row">
+            <div class="comment">{{ c.comment }}</div>
+          </div>
         </div>
       </div>
     </div>

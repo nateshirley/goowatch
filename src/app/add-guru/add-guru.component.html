@@ -1,13 +1,7 @@
-<script>
-  window.onload = function() {
-    document.getElementById("guruName").focus();
-    console.log("loaded");
-  };
-</script>
 <div class="center">
-  <div class="container">
+  <div class="container add-container">
     <div class="submit-header">Submit for Review</div>
-    <div class="card-wrap goo-loop">
+    <!--  <div class="card-wrap goo-loop">
       <div class="row goo-preview-card align-self-center">
         <div class="col-3 no-gutters preview-card-left">
           <div class="preview-card-left-content">
@@ -52,19 +46,19 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
     <!-- ADD GURU FORM -->
-    <form class="add-form">
+    <form class="add-form add-container">
       <div class="form-group">
         <label class="add-guru-input-label">Display Name</label>
         <input
           autofocus
           type="text"
-          id="guruName"
           class="form-control display-name-input"
           [(ngModel)]="newGuru.name"
-          name="displayName"
+          id="displayName"
         />
+        <div id="name_error" class="add-error"></div>
       </div>
       <div class="form-group">
         <label class="add-guru-input-label">Category</label>
@@ -72,40 +66,65 @@
           class="form-control input-short"
           [(ngModel)]="newGuru.category"
           name="category"
+          id="category"
         >
           <option *ngFor="let c of categories">{{ c }}</option>
         </select>
+        <div id="category_error" class="add-error"></div>
       </div>
       <div class="form-group">
         <label class="add-guru-input-label">Description</label>
         <textarea
           type="text"
-          class="form-control"
+          class="form-control add-description"
           [(ngModel)]="newGuru.description"
           name="description"
+          id="description"
         ></textarea>
+        <div id="description_error" class="add-error"></div>
       </div>
       <div class="form-group">
-        <label class="add-guru-input-label">YouTube</label>
+        <label class="add-guru-input-label">YouTube Link</label>
         <input
           type="url"
           class="form-control input-short"
           [(ngModel)]="newGuru.youtube"
           name="youtube"
+          id="youtube"
         />
+        <div id="youtube_error" class="add-error"></div>
       </div>
       <div class="form-group">
-        <label class="add-guru-input-label">Website</label>
+        <label class="add-guru-input-label">Other Link</label>
         <input
           type="url"
           class="form-control input-short"
           [(ngModel)]="newGuru.website"
-          name="youtube"
+          name="website"
+          id="otherLink"
         />
+        <div id="otherLink_error" class="add-error"></div>
       </div>
     </form>
-    <button type="button" class="btn btn-outline-secondary submit-button">
-      SUBMIT
-    </button>
+    <div>
+      <button
+        type="button"
+        class="btn btn-outline-secondary submit-button"
+        (click)="onPreview()"
+      >
+        Preview
+      </button>
+      <span
+        ><button
+          type="button"
+          class="btn btn-outline-secondary submit-button"
+          (click)="onSubmitGoo()"
+          style="margin-left: 10px;"
+        >
+          Submit
+        </button></span
+      >
+    </div>
+    <div id="preview"></div>
   </div>
 </div>
