@@ -23,3 +23,38 @@ dynamic:
 home page: click arrow to change score
 comment page: comment submit
 form submit: populate guru card with content as user types
+
+(16 points) — HTML
+(10 points) Properly create at least three different screens with respect to the functionalities you proposed (for a group of 2 members)
+
+
+(3 points) Properly allow users to interact with the system
+(3 points) Properly accept users' data entries (i.e., inputs)
+(22 points) — CSS
+(15 points) Correctly and properly define at least five of your own CSS rules (3 points each)
+We expect you to be able to define CSS rules to style the screens
+(3 points) Properly implement and use at least one external CSS file
+(4 points) At least two of your five CSS rules properly update the style or layout of your screens when specific events occur (2 points each)
+(30 points) — JavaScript
+(10 points) Properly implement at least five dynamic behavior using your own JavaScript (2 points each)
+- vote up/down, add comment, form handle comment, form handle add guru, preview guru
+(5 points) Perform proper client-side input validation
+(3 points) Properly validate form data
+(2 points) Provide user-appropriate error messages
+If no error message is provided, other reasonable and appropriate handling (such as auto-complete or auto-correction with defaults) and/or some forms of user-appropriate feedback are acceptable.
+(3 points) Properly perform DOM manipulation
+(3 points) Properly modify style and layout of your screens (or views) when a specific event occurs
+(3 points) Correctly use at least one event listener
+(3 points) Correctly implement and use at least one anonymous function
+Your anonymous function may be self-invoked or invoked as part of an expression ("function expression").
+(3 points) Correctly implement and use at least one arrow function
+(6 points) — Support responsive design / layout
+(6 points) — Adherence to all usability concepts as discussed in class
+(5 points) — Use good coding style: readability, style, and maintainability
+Make identifier names understandable
+Use proper and consistent indentation
+Use comments
+Use carriage return
+(15 points) — User demonstration
+(10 points) Program is demonstrated clearly
+(5 points) Code segments clearly explained

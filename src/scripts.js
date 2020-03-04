@@ -14,6 +14,7 @@ submitCommentVanilla = () => {
     errorMsg = "Type a comment.";
   }
   document.getElementById("commentError").innerHTML = errorMsg;
+  console.log("submit called");
 };
 
 previewGooVanilla = () => {
@@ -119,64 +120,8 @@ checkAddInput = (displayName, category, description, youtube, otherLink) => {
   return isValid;
 };
 
-// Four tests:
-// 1) Age is an integer
-// 2) Major is not an integer
-// 3) Major is not missing
-// 4) Student number is in proper format
-// If any tests doesn't pass, submission is canceled.
-
-function checkRegistration() {
-  var error_msg = "";
-  var number_error = 0;
-
-  var age = document.getElementById("age");
-  if (!isInt(age.value)) {
-    number_error++;
-    error_msg += "<br/>" + number_error + ". Age must be an integer."; // for innerHTML
-    document.getElementById("age").value = age.value;
-    document.getElementById("msg_age").innerHTML = "Age must be an integer.";
-  } else document.getElementById("msg_age").innerHTML = "";
-
-  var major = document.getElementById("major");
-  if (isInt(major.value)) {
-    number_error++;
-    error_msg += "<br/>" + number_error + ". Use major name, not major number.";
-    document.getElementById("major").value = major.value;
-    document.getElementById("msg_major").innerHTML =
-      "Use major name, not major number.";
-  } else if (major.value.length <= 0) {
-    number_error++;
-    error_msg += "<br/>" + number_error + ". Missing major.";
-    document.getElementById("msg_major").innerHTML = "Missing major.";
-  } else document.getElementById("msg_major").innerHTML = "";
-
-  var sid = document.getElementById("sid");
-  if (sid.value.length < 4 || sid.value.length > 6) {
-    // assume UVA computingID  xxx9xxx
-    number_error++;
-    error_msg +=
-      "<br/>" +
-      number_error +
-      ". Student ID must be 4 to 6 characters and follow the UVA computingID format.";
-    document.getElementById("sid").value = sid.value;
-    document.getElementById("msg_sid").innerHTML =
-      "Student ID must be 4 to 6 characters and follow the UVA computingID format.";
-  } else if (!checkPattern(sid.value)) {
-    number_error++;
-    error_msg +=
-      "<br/>" +
-      number_error +
-      ". Student ID must be in the UVA computingID format.";
-    document.getElementById("sid").value = sid.value;
-    document.getElementById("msg_sid").innerHTML =
-      "Student ID must be 4 to 6 characters and follow the UVA computingID format.";
-  } else document.getElementById("msg_sid").innerHTML = "";
-
-  if (number_error > 0) {
-    document.getElementById("msg").innerHTML =
-      "Please fix the following fields and submit again: " + error_msg;
-    return false;
-  } // Format looks OK, form can be submitted.
-  else return true;
-}
+addCommentListener = () => {
+  document
+    .getElementById("submitComment")
+    .addEventListener("click", submitCommentVanilla);
+};

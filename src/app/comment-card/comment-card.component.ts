@@ -1,6 +1,11 @@
-import { Component, OnInit, ViewEncapsulation } from "@angular/core";
+import {
+  Component,
+  OnInit,
+  ViewEncapsulation,
+  ElementRef
+} from "@angular/core";
 import { GooComments } from "../interfaces/goo-comments";
-declare const submitCommentVanilla: any;
+declare const addCommentListener: any;
 @Component({
   selector: "app-comment-card",
   templateUrl: "./comment-card.component.html",
@@ -8,6 +13,9 @@ declare const submitCommentVanilla: any;
   encapsulation: ViewEncapsulation.None
 })
 export class CommentCardComponent implements OnInit {
+  commentListener = () => {
+    addCommentListener();
+  };
   commentArray: GooComments = {
     id: 1,
     comments: [
@@ -30,12 +38,6 @@ export class CommentCardComponent implements OnInit {
         "I bought this guy's course for $2300. It's been super helpful. Set up my business and did 200k in sales."
     }
   ];
-  frontComments = [];
-  thisComment = "";
-  errorMsg = "";
-  submitComment = comment => {
-    submitCommentVanilla();
-  };
   /*  addComment = comment => {
     if (comment.length > 0) {
       this.frontComments.unshift(comment);
@@ -47,5 +49,7 @@ export class CommentCardComponent implements OnInit {
   }; */
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.commentListener();
+  }
 }
