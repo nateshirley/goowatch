@@ -1,10 +1,11 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ViewEncapsulation } from "@angular/core";
 import { GooComments } from "../interfaces/goo-comments";
-
+declare const submitCommentVanilla: any;
 @Component({
   selector: "app-comment-card",
   templateUrl: "./comment-card.component.html",
-  styleUrls: ["./comment-card.component.css"]
+  styleUrls: ["./comment-card.component.css"],
+  encapsulation: ViewEncapsulation.None
 })
 export class CommentCardComponent implements OnInit {
   commentArray: GooComments = {
@@ -32,7 +33,10 @@ export class CommentCardComponent implements OnInit {
   frontComments = [];
   thisComment = "";
   errorMsg = "";
-  addComment = comment => {
+  submitComment = comment => {
+    submitCommentVanilla();
+  };
+  /*  addComment = comment => {
     if (comment.length > 0) {
       this.frontComments.unshift(comment);
       this.thisComment = "";
@@ -40,7 +44,7 @@ export class CommentCardComponent implements OnInit {
     } else {
       this.errorMsg = "Type a comment.";
     }
-  };
+  }; */
   constructor() {}
 
   ngOnInit(): void {}

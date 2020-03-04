@@ -7,33 +7,24 @@
       [(ngModel)]="thisComment"
     ></textarea>
     <div class="submit-div">
-      <small id="commentError" class="form-text text-muted error-msg"
-        >{{ errorMsg }}
+      <small class="form-text text-muted error-msg"
+        ><span id="commentError"></span>
         <span>
           <button
             type="button"
             class="btn btn-secondary comment-button"
-            (click)="addComment(thisComment)"
+            (click)="submitComment(thisComment)"
           >
             COMMENT
           </button></span
-        ></small
-      >
+        >
+      </small>
     </div>
   </div>
-  <div *ngIf="frontComments.length > 0">
-    <div *ngFor="let f of frontComments">
-      <div class="comment-loop">
-        <div class="comment-card">
-          <div class="row comment-card-row user-row">
-            <div class="comment-user">guest</div>
-          </div>
-          <div class="row comment-card-row">
-            <div class="comment">{{ f }}</div>
-          </div>
-        </div>
-      </div>
-    </div>
+  <!--  <div *ngIf="frontComments.length > 0">
+    <div *ngFor="let f of frontComments"> -->
+  <div>
+    <div id="recentComment"></div>
   </div>
 
   <div *ngFor="let c of comments">
