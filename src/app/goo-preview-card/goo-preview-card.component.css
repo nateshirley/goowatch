@@ -74,17 +74,11 @@ a.goo-preview-card:hover {
   margin-right: 77px;
 }
 
-@media (min-width: 576px) {
+@media (max-width: 576px) {
   .container {
     max-width: 570px;
   }
 }
-/* @media only screen and (max-width: 500px) {
-  .goo-preview-card {
-    width: 90%;
-  }
-} */
-/* 2436x1125px at 458ppi */
 @media only screen and (max-width: 590px) {
   .goo-loop {
     padding-top: 3px;

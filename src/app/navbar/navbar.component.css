@@ -6,7 +6,9 @@
 }
 .search-bar {
   margin-left: auto;
-  margin-right: 2em;
+  float: right;
+  text-align: right;
+  margin-right: 10px;
 }
 .goowatch {
   color: black;
@@ -20,7 +22,4 @@ a.goowatch:hover {
 }
 .user {
   margin-right: 1em;
-}
-.add-button {
-  margin-right: 15px;
 }

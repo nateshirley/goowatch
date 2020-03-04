@@ -1,3 +1,7 @@
+.add-container {
+  padding-left: 10px;
+  padding-right: 10px;
+}
 .submit-header {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
@@ -9,6 +13,11 @@
 .add-form {
   padding-top: 10px;
 }
+.add-error {
+  font-size: 0.8em;
+  color: lightcoral;
+  padding-left: 5px;
+}
 .add-guru-input-label {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
@@ -18,6 +27,11 @@
 }
 .form-group {
   text-align: left;
+}
+.add-description {
+  font-size: 12px;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
 }
 .display-name-input {
   width: 250px;
@@ -31,6 +45,7 @@
   background-color: white;
   color: green;
   margin-top: 20px;
+  margin-bottom: 20px;
 }
 .submit-button:hover {
   background-color: gray;
@@ -41,9 +56,11 @@
  */
 .center {
   text-align: center;
+  height: 100%;
 }
 .goo-loop {
   padding-top: 17px;
+  padding-bottom: 17px;
 }
 .goo-preview-card {
   background-color: white;
