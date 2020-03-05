@@ -1,3 +1,4 @@
+// NATHAN SHIRLEY (nes2ta)
 import { Component } from "@angular/core";
 
 @Component({

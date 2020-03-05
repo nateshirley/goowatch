@@ -1,5 +1,6 @@
+// NATHAN SHIRLEY (nes2ta)
 import { Component, OnInit } from '@angular/core';
-
+// just a stereotypical, simple Angular component
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',

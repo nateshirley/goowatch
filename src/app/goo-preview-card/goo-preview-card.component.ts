@@ -1,3 +1,4 @@
+// JT Graass (jtg4de)
 import { Component, OnInit, Input } from "@angular/core";
 import { mockGurus } from "../mock-gurus";
 import { Guru } from "../interfaces/guru";

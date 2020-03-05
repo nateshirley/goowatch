@@ -1,3 +1,5 @@
+// NATHAN SHIRLEY (nes2ta)
+// Guru object class with every said field
 export interface Guru {
   id: number;
   name: string;

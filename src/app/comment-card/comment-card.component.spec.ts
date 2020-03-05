@@ -1,3 +1,4 @@
+// NATHAN SHIRLEY (nes2ta)
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CommentCardComponent } from './comment-card.component';

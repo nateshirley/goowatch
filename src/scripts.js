@@ -1,3 +1,5 @@
+// NATHAN SHIRLEY (nes2ta) and JT Graass (jtg4de)
+// enables user to click to decrease value of a Guru's ranking
 downvoteVanilla = id => {
   event.cancelBubble = true;
   if (event.stopPropagation) event.stopPropagation();
@@ -8,6 +10,7 @@ downvoteVanilla = id => {
   console.log(targetID);
   document.getElementById(targetID).innerHTML = score;
 };
+// enables user to click to increase value of a Guru's ranking
 upvoteVanilla = id => {
   event.cancelBubble = true;
   if (event.stopPropagation) event.stopPropagation();
@@ -18,7 +21,7 @@ upvoteVanilla = id => {
   console.log(targetID);
   document.getElementById(targetID).innerHTML = score;
 };
-
+// enables user to submit a comment on a Guru's page
 submitCommentVanilla = () => {
   var comment = document.getElementById("commentTextArea").value;
   var errorMsg;
@@ -37,7 +40,7 @@ submitCommentVanilla = () => {
   document.getElementById("commentError").innerHTML = errorMsg;
   console.log("submit called");
 };
-
+// allows user to see how their submitted Guru's card would appear
 previewGooVanilla = () => {
   var displayName = document.getElementById("displayName").value;
   var category = document.getElementById("category").value;
@@ -72,7 +75,7 @@ previewGooVanilla = () => {
     document.getElementById("preview").innerHTML = "";
   }
 };
-
+// creates another Guru card for review
 submitGooVanilla = () => {
   var displayName = document.getElementById("displayName").value;
   var category = document.getElementById("category").value;
@@ -96,7 +99,7 @@ submitGooVanilla = () => {
       "Thank you for your submission. We look forward to reviewing it.";
   }
 };
-
+// checks the validity of a user's submitted Guru
 checkAddInput = (displayName, category, description, youtube, otherLink) => {
   isValid = true;
   if (displayName.length < 1) {
@@ -140,7 +143,7 @@ checkAddInput = (displayName, category, description, youtube, otherLink) => {
   }
   return isValid;
 };
-
+// event listener for submitting comments on a Guru
 addCommentListener = () => {
   document
     .getElementById("submitComment")

@@ -1,16 +1,16 @@
 HTML: Create at least three different screens with respect to the functionalities you proposed (for a group of 2 members)
 (added 25-Jan-2020)
-- The screens must allow users to interact with the system
-- At least one screen must accept users' data entries (i.e., inputs)
-- CSS: Define at least five different CSS rules and they must be your own CSS rules. If you have five CSS rules that set five different font colors, for example, they are counted as one.
-- Have at least one external CSS file
-- Have at least two CSS rules that update the style or layout of your screens when specific events occur. You may find a "pseudo class" selector particularly useful.
+//- The screens must allow users to interact with the system
+//- At least one screen must accept users' data entries (i.e., inputs)
+//- CSS: Define at least five different CSS rules and they must be your own CSS rules. If you have five CSS rules that set five different font colors, for example, they are counted as one.
+//- Have at least one external CSS file
+//- Have at least two CSS rules that update the style or layout of your screens when specific events occur. You may find a "pseudo class" selector particularly useful.
 
 JavaScript: Add at least five different dynamic behavior using your own JavaScript to your project. 
 - Each screen (or view) of your project should have at least one dynamic behavior.
 - Perform client-side input validation
     -  Validate form data
-    - error messages
+    -  error messages
 - Perform DOM manipulation
     - You may find this particularly useful for error handling and dynamically manipulating content / view (such as add, remove, or update HTML elements or contents)
 - Modify style and layout of your screens (or views) when a specific event occurs (hint: you may find event listener and DOM manipulation useful)
