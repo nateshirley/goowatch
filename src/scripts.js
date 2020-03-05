@@ -1,3 +1,24 @@
+downvoteVanilla = id => {
+  event.cancelBubble = true;
+  if (event.stopPropagation) event.stopPropagation();
+  targetID = "previewScore-" + id;
+  var score = document.getElementById(targetID);
+  score = score.textContent;
+  score = parseInt(score) - 1;
+  console.log(targetID);
+  document.getElementById(targetID).innerHTML = score;
+};
+upvoteVanilla = id => {
+  event.cancelBubble = true;
+  if (event.stopPropagation) event.stopPropagation();
+  targetID = "previewScore-" + id;
+  var score = document.getElementById(targetID);
+  score = score.textContent;
+  score = parseInt(score) + 1;
+  console.log(targetID);
+  document.getElementById(targetID).innerHTML = score;
+};
+
 submitCommentVanilla = () => {
   var comment = document.getElementById("commentTextArea").value;
   var errorMsg;
