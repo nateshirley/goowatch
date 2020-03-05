@@ -12,7 +12,32 @@
               alt="Miles"
               class="preview-card-avatar"
             />
-            <div class="preview-card-score">&#8595;{{ guru.score }}&#8593;</div>
+            <div class="preview-card-score">
+              <span>
+                <button
+                  class="down-button"
+                  (click)="
+                    downvote(guru.id);
+                    $event.preventDefault();
+                    $event.stopPropagation()
+                  "
+                >
+                  &#8595;
+                </button></span
+              ><span id="previewScore-{{ guru.id }}">{{ guru.score }}</span
+              ><span
+                ><button
+                  class="up-button"
+                  (click)="
+                    upvote(guru.id);
+                    $event.preventDefault();
+                    $event.stopPropagation()
+                  "
+                >
+                  &#8593;
+                </button></span
+              >
+            </div>
           </div>
         </div>
         <div class="col-9 no-gutters preview-card-right">

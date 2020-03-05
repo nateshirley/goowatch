@@ -37,6 +37,15 @@ a.goo-preview-card:hover {
   margin: auto;
   padding-top: 7px;
 }
+.down-button {
+  border-radius: 4px;
+  border: 1px solid rgb(185, 185, 185);
+}
+.up-button {
+  border-radius: 4px;
+  border: 1px solid rgb(185, 185, 185);
+}
+
 .preview-card-avatar {
   overflow: hidden;
   height: 72px;
