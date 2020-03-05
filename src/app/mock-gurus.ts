@@ -1,5 +1,7 @@
+// JT Graass (jtg4de)
 import { Guru } from "./interfaces/guru";
-
+// this is where we are housing all of our data (Guru objects) for the time being
+// access each Guru by its unique id
 export const mockGurus: Guru[] = [
   {
     id: 1,

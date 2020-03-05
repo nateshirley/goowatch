@@ -1,3 +1,4 @@
+<!-- NATHAN SHIRLEY (nes2ta) -->
 <div *ngIf="guru" class="center">
   <div class="container">
     <div class="card-wrap goo-loop">
@@ -9,7 +10,62 @@
               alt="Miles"
               class="preview-card-avatar"
             />
-            <div class="preview-card-score">&#8595;{{ guru.score }}&#8593;</div>
+            <div class="preview-card-score">
+              <span>
+                <button
+                  class="down-button"
+                  (click)="
+                    downvote(guru.id);
+                    $event.preventDefault();
+                    $event.stopPropagation()
+                  "
+                >
+                  &#8595;
+                </button></span
+              ><span id="previewScore-{{ guru.id }}">{{ guru.score }}</span
+              ><span
+                ><button
+                  class="up-button"
+                  (click)="
+                    upvote(guru.id);
+                    $event.preventDefault();
+                    $event.stopPropagation()
+                  "
+                >
+                  &#8593;
+                </button>
+                </span
+              >
+            </div>
+            <!-- <div class="preview-card-score">
+              <span>
+                <button
+                    class="down-button"
+                    (click)="
+                      downvote(guru.id);
+                      $event.preventDefault();
+                      $event.stopPropagation()
+                    "
+                  >
+                    &#8595;
+                  </button>
+                  {{ guru.score }} 
+              </span>
+                  <span id="previewScore-{{ guru.id }}">
+                    {{ guru.score }}
+                  </span>
+              <span>
+                <button class="up-button"
+                    (click)="
+                      upvote(guru.id);
+                      $event.preventDefault();
+                      $event.stopPropagation()
+                    "
+                  >
+                    &#8593;
+                  </button>
+              </span>
+            </div> -->
           </div>
         </div>
 
@@ -21,6 +77,7 @@
             </div>
             <p class="preview-card-description">{{ guru.description }}</p>
           </div>
+          <!-- links to Youtube and their own website -->
           <div class="icon-row">
             <div class="icons">
               <span class="icon-span"

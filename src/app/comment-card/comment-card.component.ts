@@ -1,3 +1,4 @@
+// NATHAN SHIRLEY (nes2ta)
 import {
   Component,
   OnInit,
@@ -16,6 +17,7 @@ export class CommentCardComponent implements OnInit {
   commentListener = () => {
     addCommentListener();
   };
+  // comments are an array with fields as "user" and "comment," containing the body text of the comment
   commentArray: GooComments = {
     id: 1,
     comments: [

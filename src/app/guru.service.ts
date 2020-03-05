@@ -1,3 +1,4 @@
+// NATHAN SHIRLEY (nes2ta)
 import { Injectable } from "@angular/core";
 import { mockGurus } from "./mock-gurus";
 import { Guru } from "./interfaces/guru";
