@@ -53,6 +53,14 @@ a.goo-preview-card:hover {
     monospace;
   font-size: 19px;
 }
+.down-button {
+  border-radius: 4px;
+  border: 0px solid rgb(185, 185, 185);
+}
+.up-button {
+  border-radius: 4px;
+  border: 0px solid rgb(185, 185, 185);
+}
 .preview-card-right {
   padding-top: 10px;
   padding-right: 15px;

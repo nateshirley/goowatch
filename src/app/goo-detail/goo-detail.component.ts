@@ -9,9 +9,10 @@ declare const upvoteVanilla: any;
 @Component({
   selector: "app-goo-detail",
   templateUrl: "./goo-detail.component.html",
-  styleUrls: ["./goo-detail.component.css"]
+  styleUrls: ["./goo-detail.component.css"],
 })
 export class GooDetailComponent implements OnInit {
+  user;
   constructor(
     private route: ActivatedRoute,
     private guruService: GuruService,
@@ -20,17 +21,17 @@ export class GooDetailComponent implements OnInit {
   @Input() guru: Guru;
   ngOnInit(): void {
     this.getGuru();
+    this.user = localStorage.getItem("user");
   }
   getGuru(): void {
     const id = +this.route.snapshot.paramMap.get("id");
-    this.guruService.getGuru(id).subscribe(guru => (this.guru = guru));
+    this.guruService.getGuru(id).subscribe((guru) => (this.guru = guru));
   }
   // likewise need these functions for the individual Gurus' pages too
-  downvote = id => {
+  downvote = (id) => {
     downvoteVanilla(id);
   };
-  upvote = id => {
+  upvote = (id) => {
     upvoteVanilla(id);
   };
-
 }

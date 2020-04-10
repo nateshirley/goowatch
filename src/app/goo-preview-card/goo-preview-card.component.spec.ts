@@ -1,17 +1,16 @@
 // NATHAN SHIRLEY (nes2ta)
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { GooPreviewCardComponent } from './goo-preview-card.component';
+import { GooPreviewCardComponent } from "./goo-preview-card.component";
 
-describe('GooPreviewCardComponent', () => {
+describe("GooPreviewCardComponent", () => {
   let component: GooPreviewCardComponent;
   let fixture: ComponentFixture<GooPreviewCardComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ GooPreviewCardComponent ]
-    })
-    .compileComponents();
+      declarations: [GooPreviewCardComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -20,7 +19,7 @@ describe('GooPreviewCardComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

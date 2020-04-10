@@ -1,6 +1,6 @@
 <!-- NATHAN SHIRLEY (nes2ta) -->
-<nav class="navbar  navbar-light background">
-  <a class="navbar-brand goowatch" routerLink="gurus"> Goowatch</a>
+<nav class="navbar navbar-light background">
+  <a class="navbar-brand goowatch" routerLink="/gurus"> Goowatch</a>
   <!--   <button
     class="navbar-toggler"
     type="button"
@@ -31,9 +31,16 @@
       </form> -->
       <!-- see router to see where it links to -->
       <button
+        class="btn btn-secondary"
+        (click)="userNav()"
+        title="always enabled"
+      >
+        User
+      </button>
+      <button
         class="btn btn btn-outline-secondary add-button"
         type="submit"
-        routerLink="addGuru"
+        routerLink="/addGuru"
       >
         Add Guru
       </button>

@@ -1,43 +1,45 @@
 <!-- NATHAN SHIRLEY (nes2ta) -->
+
 <div *ngIf="guru" class="center">
-  <div class="container">
-    <div class="card-wrap goo-loop">
-      <div class="row goo-preview-card align-self-center">
-        <div class="col-3 no-gutters preview-card-left">
-          <div class="preview-card-left-content">
-            <img
-              src="../assets/pics/nomadmil.jpg"
-              alt="Miles"
-              class="preview-card-avatar"
-            />
-            <div class="preview-card-score">
-              <span>
-                <button
-                  class="down-button"
-                  (click)="
-                    downvote(guru.id);
-                    $event.preventDefault();
-                    $event.stopPropagation()
-                  "
-                >
-                  &#8595;
-                </button></span
-              ><span id="previewScore-{{ guru.id }}">{{ guru.score }}</span
-              ><span
-                ><button
-                  class="up-button"
-                  (click)="
-                    upvote(guru.id);
-                    $event.preventDefault();
-                    $event.stopPropagation()
-                  "
-                >
-                  &#8593;
-                </button>
-                </span
-              >
-            </div>
-            <!-- <div class="preview-card-score">
+  <app-navbar></app-navbar>
+  <div *ngIf="user">
+    <div class="container">
+      <div class="card-wrap goo-loop">
+        <div class="row goo-preview-card align-self-center">
+          <div class="col-3 no-gutters preview-card-left">
+            <div class="preview-card-left-content">
+              <img
+                src="../assets/pics/nomadmil.jpg"
+                alt="Miles"
+                class="preview-card-avatar"
+              />
+              <div class="preview-card-score">
+                <span>
+                  <button
+                    class="down-button"
+                    (click)="
+                      downvote(guru.id);
+                      $event.preventDefault();
+                      $event.stopPropagation()
+                    "
+                  >
+                    &#8595;
+                  </button></span
+                ><span id="previewScore-{{ guru.id }}">{{ guru.score }}</span
+                ><span
+                  ><button
+                    class="up-button"
+                    (click)="
+                      upvote(guru.id);
+                      $event.preventDefault();
+                      $event.stopPropagation()
+                    "
+                  >
+                    &#8593;
+                  </button>
+                </span>
+              </div>
+              <!-- <div class="preview-card-score">
               <span>
                 <button
                     class="down-button"
@@ -66,40 +68,47 @@
                   </button>
               </span>
             </div> -->
-          </div>
-        </div>
-
-        <div class="col-9 no-gutters preview-card-right">
-          <div>
-            <div class="preview-card-right-header">
-              <span class="preview-card-name name-select">{{ guru.name }}</span>
-              <span class="preview-card-category">{{ guru.category }}</span>
             </div>
-            <p class="preview-card-description">{{ guru.description }}</p>
           </div>
-          <!-- links to Youtube and their own website -->
-          <div class="icon-row">
-            <div class="icons">
-              <span class="icon-span"
-                ><a href="https://www.youtube.com/" target="_blank">
-                  <img
-                    src="../assets/icons/youtube1.png"
-                    alt="YouTube"
-                    class="icon"/></a
-              ></span>
-              <span class="icon-span"
-                ><a href="https://nomadaccelerator.carrd.co/" target="_blank"
-                  ><img
-                    src="../assets/icons/link.png"
-                    alt="website"
-                    class="icon-link"/></a
-              ></span>
+
+          <div class="col-9 no-gutters preview-card-right">
+            <div>
+              <div class="preview-card-right-header">
+                <span class="preview-card-name name-select">{{
+                  guru.name
+                }}</span>
+                <span class="preview-card-category">{{ guru.category }}</span>
+              </div>
+              <p class="preview-card-description">{{ guru.description }}</p>
+            </div>
+            <!-- links to Youtube and their own website -->
+            <div class="icon-row">
+              <div class="icons">
+                <span class="icon-span"
+                  ><a href="https://www.youtube.com/" target="_blank">
+                    <img
+                      src="../assets/icons/youtube1.png"
+                      alt="YouTube"
+                      class="icon" /></a
+                ></span>
+                <span class="icon-span"
+                  ><a href="https://nomadaccelerator.carrd.co/" target="_blank"
+                    ><img
+                      src="../assets/icons/link.png"
+                      alt="website"
+                      class="icon-link" /></a
+                ></span>
+              </div>
             </div>
           </div>
         </div>
       </div>
+      <!--     comment component -->
+      <app-comment-card></app-comment-card>
     </div>
-    <!--     comment component -->
-    <app-comment-card></app-comment-card>
+  </div>
+  <div class="container" *ngIf="user == null">
+    <br />
+    User doesn't have access to this data.
   </div>
 </div>

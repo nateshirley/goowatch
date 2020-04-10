@@ -1,0 +1,31 @@
+<div class="center">
+  <app-navbar></app-navbar>
+  <div class="container">
+    <div *ngIf="user">
+      <br />
+      Hello, {{ user }}
+      <div>
+        <button
+          class="btn btn-secondary"
+          (click)="logout()"
+          title="always enabled"
+        >
+          Logout
+        </button>
+      </div>
+    </div>
+    <div *ngIf="user == null">
+      <br />
+      No user signed in.
+      <div>
+        <button
+          class="btn btn-secondary"
+          (click)="login()"
+          title="always enabled"
+        >
+          Login
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

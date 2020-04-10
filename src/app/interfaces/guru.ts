@@ -1,5 +1,5 @@
 // NATHAN SHIRLEY (nes2ta)
-// Guru object class with every said field
+// Guru interface
 export interface Guru {
   id: number;
   name: string;

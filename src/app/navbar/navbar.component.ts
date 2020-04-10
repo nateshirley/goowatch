@@ -1,16 +1,16 @@
 // NATHAN SHIRLEY (nes2ta)
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
 @Component({
-  selector: 'app-navbar',
-  templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css']
+  selector: "app-navbar",
+  templateUrl: "./navbar.component.html",
+  styleUrls: ["./navbar.component.css"],
 })
 export class NavbarComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor(private router: Router) {}
+  userNav() {
+    this.router.navigate(["user"]);
   }
 
+  ngOnInit(): void {}
 }

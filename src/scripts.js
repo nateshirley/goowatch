@@ -1,8 +1,6 @@
 // NATHAN SHIRLEY (nes2ta) and JT Graass (jtg4de)
 // enables user to click to decrease value of a Guru's ranking
 downvoteVanilla = id => {
-  event.cancelBubble = true;
-  if (event.stopPropagation) event.stopPropagation();
   targetID = "previewScore-" + id;
   var score = document.getElementById(targetID);
   score = score.textContent;
@@ -12,8 +10,6 @@ downvoteVanilla = id => {
 };
 // enables user to click to increase value of a Guru's ranking
 upvoteVanilla = id => {
-  event.cancelBubble = true;
-  if (event.stopPropagation) event.stopPropagation();
   targetID = "previewScore-" + id;
   var score = document.getElementById(targetID);
   score = score.textContent;

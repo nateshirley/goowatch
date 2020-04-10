@@ -1,0 +1,39 @@
+<div class="container">
+  <br />
+  <h1>Goowatch</h1>
+  <form #loginForm="ngForm">
+    <div class="form-group">
+      <label>Username: </label>
+      <input
+        type="text"
+        class="form-control"
+        name="username"
+        required
+        #username="ngModel"
+        [(ngModel)]="user.username"
+      />
+      <small style="color: red;">{{ username_error }}</small>
+    </div>
+    <div class="form-group">
+      <label>Password: </label>
+      <input
+        type="password"
+        class="form-control"
+        name="password"
+        required
+        #password="ngModel"
+        [(ngModel)]="user.password"
+      />
+      <small style="color: red;">{{ pass_error }}</small>
+    </div>
+  </form>
+  <button
+    class="btn btn-secondary"
+    (click)="login(loginForm.value)"
+    title="always enabled"
+  >
+    Submit
+  </button>
+  <div style="color: rgb(99, 99, 99);"><br />{{ responsedata }}</div>
+  {{ secureUser }}
+</div>

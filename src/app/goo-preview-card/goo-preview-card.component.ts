@@ -3,20 +3,25 @@ import { Component, OnInit, Input } from "@angular/core";
 import { mockGurus } from "../mock-gurus";
 import { Guru } from "../interfaces/guru";
 import { GuruService } from "../guru.service";
+import {
+  HttpClient,
+  HttpErrorResponse,
+  HttpParams,
+} from "@angular/common/http";
 declare const downvoteVanilla: any;
 declare const upvoteVanilla: any;
 
 @Component({
   selector: "app-goo-preview-card",
   templateUrl: "./goo-preview-card.component.html",
-  styleUrls: ["./goo-preview-card.component.css"]
+  styleUrls: ["./goo-preview-card.component.css"],
 })
 export class GooPreviewCardComponent implements OnInit {
   gurus: Guru[];
-  downvote = id => {
+  downvote = (id) => {
     downvoteVanilla(id);
   };
-  upvote = id => {
+  upvote = (id) => {
     upvoteVanilla(id);
   };
 
@@ -26,6 +31,7 @@ export class GooPreviewCardComponent implements OnInit {
     this.getGurus();
   }
   getGurus(): void {
-    this.guruService.getGurus().subscribe(gurus => (this.gurus = gurus));
+    this.guruService.getGurus().subscribe((gurus) => (this.gurus = gurus));
+    //
   }
 }

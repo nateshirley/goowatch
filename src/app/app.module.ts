@@ -14,6 +14,10 @@ import { CommentCardComponent } from "./comment-card/comment-card.component";
 import { AddGuruComponent } from "./add-guru/add-guru.component";
 import { FooterComponent } from "./footer/footer.component";
 
+import { HttpClientModule } from "@angular/common/http";
+import { LoginComponent } from './login/login.component';
+import { UserComponent } from './user/user.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,10 +27,12 @@ import { FooterComponent } from "./footer/footer.component";
     NavbarComponent,
     CommentCardComponent,
     AddGuruComponent,
-    FooterComponent
+    FooterComponent,
+    LoginComponent,
+    UserComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}
