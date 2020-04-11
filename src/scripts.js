@@ -49,15 +49,10 @@ previewGooVanilla = () => {
   var displayName = document.getElementById("displayName").value;
   var category = document.getElementById("category").value;
   var description = document.getElementById("description").value;
-  var youtube = document.getElementById("youtube").value;
-  var otherLink = document.getElementById("otherLink").value;
-  var isValid = checkAddInput(
-    displayName,
-    category,
-    description,
-    youtube,
-    otherLink
-  );
+  //var youtube = document.getElementById("youtube").value;
+  var otherLink = document.getElementById("link").value;
+  console.log(otherLink);
+  var isValid = checkAddInput(displayName, category, description, otherLink);
   if (isValid) {
     var htmlLeft =
       '<div class="card-wrap goo-loop"><div class="row goo-preview-card align-self-center"><div class="col-3 no-gutters preview-card-left"><div class="preview-card-left-content"><img src="../assets/pics/default-hand.png" alt="new guru" class="preview-card-avatar"/><div class="preview-card-score">&#8595;000&#8593;</div></div></div>';
@@ -69,8 +64,8 @@ previewGooVanilla = () => {
       '</span></div><p class="preview-card-description">' +
       description +
       '</p></div><div class="icon-row"><div class="icons"><span class="icon-span"><a href="' +
-      youtube +
-      '" target="_blank"><img src="../assets/icons/youtube1.png"alt="YouTube"class="icon"/></a></span><span class="icon-span"><a href="' +
+      //youtube +
+      //'" target="_blank"><img src="../assets/icons/youtube1.png"alt="YouTube"class="icon"/></a></span><span class="icon-span"><a href="' +
       otherLink +
       '" target="_blank"><img src="../assets/icons/link.png"alt="website"class="icon-link"/></a></span></div></div></div></div></div>';
     document.getElementById("preview").innerHTML = htmlLeft + htmlRight;
@@ -84,27 +79,29 @@ submitGooVanilla = () => {
   var displayName = document.getElementById("displayName").value;
   var category = document.getElementById("category").value;
   var description = document.getElementById("description").value;
-  var youtube = document.getElementById("youtube").value;
-  var otherLink = document.getElementById("otherLink").value;
+  //var youtube = document.getElementById("youtube").value;
+  var otherLink = document.getElementById("link").value;
   var isValid = checkAddInput(
     displayName,
     category,
     description,
-    youtube,
+    //youtube,
     otherLink
   );
   if (isValid) {
+    let formData = [displayName, category, description, otherLink];
     document.getElementById("displayName").value = "";
     document.getElementById("category").value = "";
     document.getElementById("description").value = "";
-    document.getElementById("youtube").value = "";
-    document.getElementById("otherLink").value = "";
+    //document.getElementById("youtube").value = "";
+    document.getElementById("link").value = "";
     document.getElementById("preview").innerHTML =
       "Thank you for your submission. We look forward to reviewing it.";
+    return formData;
   }
 };
 // checks the validity of a user's submitted Guru
-checkAddInput = (displayName, category, description, youtube, otherLink) => {
+checkAddInput = (displayName, category, description, otherLink) => {
   isValid = true;
   if (displayName.length < 1) {
     isValid = false;
@@ -125,7 +122,7 @@ checkAddInput = (displayName, category, description, youtube, otherLink) => {
   } else {
     document.getElementById("description_error").innerHTML = "";
   }
-  var checkYoutube = function (youtube) {
+  /*   var checkYoutube = function (youtube) {
     var pattern = new RegExp("(?:https?://)?(?:www.)?youtube.com/.*");
     var checkPattern = pattern.test(youtube);
     return checkPattern;
@@ -137,7 +134,7 @@ checkAddInput = (displayName, category, description, youtube, otherLink) => {
     console.log(checkYoutube(youtube));
   } else {
     document.getElementById("youtube_error").innerHTML = "";
-  }
+  } */
   if (otherLink.length < 1) {
     isValid = false;
     document.getElementById("otherLink_error").innerHTML =
