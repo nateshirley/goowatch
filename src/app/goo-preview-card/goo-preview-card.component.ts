@@ -8,8 +8,6 @@ import {
   HttpErrorResponse,
   HttpParams,
 } from "@angular/common/http";
-declare const downvoteVanilla: any;
-declare const upvoteVanilla: any;
 
 @Component({
   selector: "app-goo-preview-card",
@@ -18,20 +16,27 @@ declare const upvoteVanilla: any;
 })
 export class GooPreviewCardComponent implements OnInit {
   gurus: Guru[];
-  downvote = (id) => {
-    downvoteVanilla(id);
+  user;
+  serverGurus;
+  downvote = (id, name) => {
+    this.guruService.downvoteGuru(this.user, id, name);
   };
-  upvote = (id) => {
-    upvoteVanilla(id);
+  upvote = (id, name) => {
+    this.guruService.upvoteGuru(this.user, id, name);
   };
 
-  constructor(private guruService: GuruService) {}
+  constructor(private http: HttpClient, private guruService: GuruService) {}
 
   ngOnInit(): void {
     this.getGurus();
+    this.user = localStorage.getItem("user");
   }
   getGurus(): void {
-    this.guruService.getGurus().subscribe((gurus) => (this.gurus = gurus));
-    //
+    this.guruService
+      .getGurus()
+      .subscribe(
+        (gurus) =>
+          (this.gurus = gurus.sort((a, b) => (a.score > b.score ? 1 : -1)))
+      );
   }
 }

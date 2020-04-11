@@ -1,19 +1,6 @@
 <div class="center">
   <app-navbar></app-navbar>
   <div class="container">
-    <div *ngIf="user">
-      <br />
-      Hello, {{ user }}
-      <div>
-        <button
-          class="btn btn-secondary"
-          (click)="logout()"
-          title="always enabled"
-        >
-          Logout
-        </button>
-      </div>
-    </div>
     <div *ngIf="user == null">
       <br />
       No user signed in.
@@ -24,6 +11,42 @@
           title="always enabled"
         >
           Login
+        </button>
+      </div>
+    </div>
+    <div *ngIf="votes">
+      <br />
+      <h2 class="username">{{ user | uppercase }}'s Voting Record</h2>
+      <br />
+      <table class="table table-dark">
+        <thead>
+          <tr>
+            <th scope="col">Vote</th>
+          </tr>
+        </thead>
+        <div *ngFor="let vote of votes">
+          <tbody>
+            <div *ngIf="vote.vote == 0">
+              <th scope="row">&#8595;</th>
+              <td>{{ vote.guruName }}</td>
+            </div>
+            <div *ngIf="vote.vote == 1">
+              <th scope="row">&#8593;</th>
+              <td>{{ vote.guruName }}</td>
+            </div>
+          </tbody>
+        </div>
+      </table>
+    </div>
+    <div *ngIf="user">
+      <br />
+      <div>
+        <button
+          class="btn btn-secondary"
+          (click)="logout()"
+          title="always enabled"
+        >
+          Logout
         </button>
       </div>
     </div>

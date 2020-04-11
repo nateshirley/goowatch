@@ -1,0 +1,39 @@
+(6 points) — Correctly and properly implement at least three of the following requirements (2 points each):
+    Use array(s), may be one-dimensional arrays or multi-dimensional arrays -> YES
+    Use expressions
+    Use control structures (selection and loop) _ for each loops
+    Use predefined / standard function(s) -> array_push
+(4 points) — Correctly and properly implement at least one user-defined function -> lots
+(6 points) — Correctly and properly use the following implicit objects:
+    (3 points) $_GET -> getGurus
+    (3 points) $_POST -> most others (login, vote, etc.)
+(12 points) — Appropriate server-side input validation -> no user can vote for same guru more than once
+    (10 points) Properly validate form data -> login 
+    (2 points) Provide user-appropriate error messages -> login errors
+    If no error message is provided, other reasonable and appropriate handling (such as auto-complete or auto-correction with defaults) and/or some forms of user-appropriate feedback are acceptable.
+(10 points) — Proper implementation of form submission and handling
+(15 points) — Correctly implement and properly support multiple users, using the server-side $_SESSION object -> YES
+(5 points) — Correctly implement and properly maintain state of the application using at least one of the following mechanisms
+    ***** NO
+    $_COOKIE
+    URL rewriting
+    Hidden form field(s)
+(16 points) — Correctly implement and properly support multiple sessions, using a relational database
+    (8 points) Users must be able to retrieve and view data previously stored in a database and use them in some ways to serve some purposes -> YES, voting record
+    (8 points) Users must be able to update data stored in a database; i.e., data being stored must reflect the user inputs and/or the application states. -> yes, voting and comment
+(6 points) — Adherence to all usability concepts as discussed in class
+(5 points) — Use good coding style: readability, style, and maintainability
+Make identifier names understandable
+Use proper and consistent indentation
+Use comments
+Use carriage return
+(15 points) — User demonstration
+(10 points) Program is demonstrated clearly
+(5 points) Code segments clearly explained
+Note:
+All partners must be present at the demo. Otherwise, 10 points will be deducted and you are required to reschedule the demo.
+(-5 points) More than 5 minutes late for demo
+(-10 points) No show for demo
+(-10 points) Cancel or change the demo time less than 2 hours before the scheduled time
+(-10 points) Not submit all files necesssary for your project to be functioning
+(-10 points) Not all team members' names are included as authors of the programs/files (based on contribution) or not all team members' names are included in the note when submitting to Collab

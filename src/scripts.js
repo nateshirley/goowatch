@@ -1,6 +1,6 @@
 // NATHAN SHIRLEY (nes2ta) and JT Graass (jtg4de)
 // enables user to click to decrease value of a Guru's ranking
-downvoteVanilla = id => {
+downvoteVanilla = (id) => {
   targetID = "previewScore-" + id;
   var score = document.getElementById(targetID);
   score = score.textContent;
@@ -9,7 +9,7 @@ downvoteVanilla = id => {
   document.getElementById(targetID).innerHTML = score;
 };
 // enables user to click to increase value of a Guru's ranking
-upvoteVanilla = id => {
+upvoteVanilla = (id) => {
   targetID = "previewScore-" + id;
   var score = document.getElementById(targetID);
   score = score.textContent;
@@ -18,23 +18,31 @@ upvoteVanilla = id => {
   document.getElementById(targetID).innerHTML = score;
 };
 // enables user to submit a comment on a Guru's page
-submitCommentVanilla = () => {
+checkCommentVanilla = () => {
   var comment = document.getElementById("commentTextArea").value;
   var errorMsg;
   if (comment.length > 0) {
     errorMsg = "";
+    return comment;
+  } else {
+    errorMsg = "Type a comment.";
+  }
+  document.getElementById("commentError").innerHTML = errorMsg;
+};
+// enables user to submit a comment on a Guru's page
+showCommentVanilla = (user, comment) => {
+  if (comment.length > 0) {
     html =
-      '<div class="comment-loop"><div class="comment-card"><div class="row comment-card-row user-row"><div class="comment-user">guest</div></div><div class="row comment-card-row"><div class="comment">' +
+      '<div class="comment-loop"><div class="comment-card"><div class="row comment-card-row user-row"><div class="comment-user">' +
+      user +
+      '</div></div><div class="row comment-card-row"><div class="comment">' +
       comment +
       "</div></div></div></div>";
     document.getElementById("recentComment").innerHTML =
       html + document.getElementById("recentComment").innerHTML;
     document.getElementById("commentTextArea").value = "";
-  } else {
-    errorMsg = "Type a comment.";
-  }
-  document.getElementById("commentError").innerHTML = errorMsg;
-  console.log("submit called");
+    return true;
+  } else return false;
 };
 // allows user to see how their submitted Guru's card would appear
 previewGooVanilla = () => {
@@ -117,7 +125,7 @@ checkAddInput = (displayName, category, description, youtube, otherLink) => {
   } else {
     document.getElementById("description_error").innerHTML = "";
   }
-  var checkYoutube = function(youtube) {
+  var checkYoutube = function (youtube) {
     var pattern = new RegExp("(?:https?://)?(?:www.)?youtube.com/.*");
     var checkPattern = pattern.test(youtube);
     return checkPattern;

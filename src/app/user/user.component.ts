@@ -13,6 +13,7 @@ import {
 export class UserComponent implements OnInit {
   user;
   responsedata;
+  votes;
   constructor(private http: HttpClient, private router: Router) {}
   logout() {
     let params = JSON.stringify(this.user);
@@ -21,7 +22,6 @@ export class UserComponent implements OnInit {
     this.http.post("http://localhost/goowatch/logout.php", params).subscribe(
       (data) => {
         this.responsedata = data;
-        console.log(data);
       },
       (error) => {
         console.log("Error", error);
@@ -31,7 +31,20 @@ export class UserComponent implements OnInit {
   login() {
     this.router.navigate(["login"]);
   }
+  getVotes() {
+    let params = JSON.stringify(this.user);
+    this.http.post("http://localhost/goowatch/getVotes.php", params).subscribe(
+      (data) => {
+        this.votes = data;
+        console.log("getVote", data);
+      },
+      (error) => {
+        console.log("Error", error);
+      }
+    );
+  }
   ngOnInit(): void {
     this.user = localStorage.getItem("user");
+    this.getVotes();
   }
 }

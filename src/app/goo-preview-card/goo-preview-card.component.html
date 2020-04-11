@@ -9,7 +9,7 @@
         <div class="col-3 no-gutters preview-card-left">
           <div class="preview-card-left-content">
             <img
-              src="../assets/pics/nomadmil.jpg"
+              src="{{ guru.avatar }}"
               alt="Miles"
               class="preview-card-avatar"
             />
@@ -19,7 +19,7 @@
                 <button
                   class="down-button"
                   (click)="
-                    downvote(guru.id);
+                    downvote(guru.id, guru.name);
                     $event.preventDefault();
                     $event.stopPropagation()
                   "
@@ -31,7 +31,7 @@
                 ><button
                   class="up-button"
                   (click)="
-                    upvote(guru.id);
+                    upvote(guru.id, guru.name);
                     $event.preventDefault();
                     $event.stopPropagation()
                   "

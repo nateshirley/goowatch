@@ -9,7 +9,7 @@
           <div class="col-3 no-gutters preview-card-left">
             <div class="preview-card-left-content">
               <img
-                src="../assets/pics/nomadmil.jpg"
+                src="{{ guru.avatar }}"
                 alt="Miles"
                 class="preview-card-avatar"
               />
@@ -18,7 +18,7 @@
                   <button
                     class="down-button"
                     (click)="
-                      downvote(guru.id);
+                      downvote();
                       $event.preventDefault();
                       $event.stopPropagation()
                     "
@@ -30,7 +30,7 @@
                   ><button
                     class="up-button"
                     (click)="
-                      upvote(guru.id);
+                      upvote();
                       $event.preventDefault();
                       $event.stopPropagation()
                     "
@@ -84,15 +84,15 @@
             <!-- links to Youtube and their own website -->
             <div class="icon-row">
               <div class="icons">
-                <span class="icon-span"
-                  ><a href="https://www.youtube.com/" target="_blank">
+                <!--           <span class="icon-span"
+                  ><a href="{{ guru.link }}" target="_blank">
                     <img
                       src="../assets/icons/youtube1.png"
                       alt="YouTube"
                       class="icon" /></a
-                ></span>
+                ></span> -->
                 <span class="icon-span"
-                  ><a href="https://nomadaccelerator.carrd.co/" target="_blank"
+                  ><a href="{{ guru.link }}" target="_blank"
                     ><img
                       src="../assets/icons/link.png"
                       alt="website"
@@ -104,7 +104,7 @@
         </div>
       </div>
       <!--     comment component -->
-      <app-comment-card></app-comment-card>
+      <app-comment-card [guruID]="guru.id"></app-comment-card>
     </div>
   </div>
   <div class="container" *ngIf="user == null">
