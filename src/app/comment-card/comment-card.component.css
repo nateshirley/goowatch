@@ -4,10 +4,10 @@
 }
 .container {
   width: 570px;
+  padding-bottom: 20px;
 }
 .comment-loop {
   padding-top: 10px;
-  padding-bottom: 20px;
 }
 .comment-text {
   border-radius: 6px;
