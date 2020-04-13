@@ -1,54 +1,8 @@
 <!--  NATHAN SHIRLEY (nes2ta) -->
 <div class="center">
   <app-navbar></app-navbar>
-  <div class="container add-container">
+  <div class="container add-container" *ngIf="user">
     <div class="submit-header">Submit for Review</div>
-    <!--  <div class="card-wrap goo-loop">
-      <div class="row goo-preview-card align-self-center">
-        <div class="col-3 no-gutters preview-card-left">
-          <div class="preview-card-left-content">
-            <img
-              src="../assets/pics/default-hand.png"
-              alt="new guru"
-              class="preview-card-avatar"
-            />
-            <div class="preview-card-score">
-              &#8595;{{ newGuru.score }}&#8593;
-            </div>
-          </div>
-        </div>
-
-        <div class="col-9 no-gutters preview-card-right">
-          <div>
-            <div class="preview-card-right-header">
-              <span class="preview-card-name name-select">{{
-                newGuru.name
-              }}</span>
-              <span class="preview-card-category">{{ newGuru.category }}</span>
-            </div>
-            <p class="preview-card-description">{{ newGuru.description }}</p>
-          </div>
-          <div class="icon-row">
-            <div class="icons">
-              <span class="icon-span"
-                ><a [href]="newGuru.youtube" target="_blank">
-                  <img
-                    src="../assets/icons/youtube1.png"
-                    alt="YouTube"
-                    class="icon"/></a
-              ></span>
-              <span class="icon-span"
-                ><a [href]="newGuru.website" target="_blank"
-                  ><img
-                    src="../assets/icons/link.png"
-                    alt="website"
-                    class="icon-link"/></a
-              ></span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div> -->
     <!-- ADD GURU FORM -->
     <form class="add-form add-container">
       <div class="form-group">
@@ -129,5 +83,9 @@
       >
     </div>
     <div id="preview"></div>
+  </div>
+  <div class="container" *ngIf="user == null">
+    <br />
+    Login to access to this page.
   </div>
 </div>

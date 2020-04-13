@@ -1,13 +1,13 @@
 <!-- NATHAN SHIRLEY (nes2ta) -->
 <div class="center">
   <app-navbar></app-navbar>
-  <div class="container" *ngIf="user">
+  <div class="container feed" *ngIf="user">
     <div class="feed-header">Top Gurus</div>
     <!-- selector for preview card: -->
     <app-goo-preview-card></app-goo-preview-card>
   </div>
   <div class="container" *ngIf="user == null">
     <br />
-    User doesn't have access to this data.
+    Log in to view this page.
   </div>
 </div>

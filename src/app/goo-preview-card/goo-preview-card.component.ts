@@ -32,11 +32,11 @@ export class GooPreviewCardComponent implements OnInit {
     this.user = localStorage.getItem("user");
   }
   getGurus(): void {
-    this.guruService
-      .getGurus()
-      .subscribe(
-        (gurus) =>
-          (this.gurus = gurus.sort((a, b) => (a.score > b.score ? 1 : -1)))
-      );
+    this.guruService.getGurus().subscribe((gurus) => {
+      this.gurus = gurus.sort(function (a, b) {
+        return b.score - a.score;
+      });
+      console.log(gurus);
+    });
   }
 }

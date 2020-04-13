@@ -16,6 +16,7 @@ import {
   encapsulation: ViewEncapsulation.None,
 })
 export class AddGuruComponent implements OnInit {
+  user;
   // allows to call on previewGooVanilla() and onSubmitGooVanilla() functions written in outer javascript file as onPreview and onSubmitGoo
   onPreview = () => {
     previewGooVanilla();
@@ -23,6 +24,7 @@ export class AddGuruComponent implements OnInit {
   onSubmitGoo = () => {
     let params = submitGooVanilla();
     //[displayName, category, description, otherLink]
+    params.push(this.user);
     this.http
       .post("http://localhost/goowatch/submitGuru.php", params)
       .subscribe(
@@ -52,5 +54,7 @@ export class AddGuruComponent implements OnInit {
     link: "",
   };
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.user = localStorage.getItem("user");
+  }
 }

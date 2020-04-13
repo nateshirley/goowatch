@@ -17,7 +17,7 @@
     ***** NO
     $_COOKIE
     URL rewriting
-    Hidden form field(s)
+    Hidden form field(s) -> send account username of user who submits guru for review
 (16 points) — Correctly implement and properly support multiple sessions, using a relational database
     (8 points) Users must be able to retrieve and view data previously stored in a database and use them in some ways to serve some purposes -> YES, voting record
     (8 points) Users must be able to update data stored in a database; i.e., data being stored must reflect the user inputs and/or the application states. -> yes, voting and comment
