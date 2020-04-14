@@ -21,7 +21,7 @@ upvoteVanilla = (id) => {
 checkCommentVanilla = () => {
   var comment = document.getElementById("commentTextArea").value;
   var errorMsg;
-  if (comment.length > 0) {
+  if (comment.length > 0 && comment.length < 400) {
     errorMsg = "";
     return comment;
   } else {
