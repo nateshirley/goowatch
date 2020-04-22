@@ -1,0 +1,15 @@
+(58 points) — Part 1: Angular implementation
+(14 points) Correctly implement at least one component
+(10 points) Correctly use at least two out of three common, built-in structural directives (5 points each)
+    ngIf -> previewCardFeed to show feed if user is set
+    ngFor -> GooPreviewCard
+    ngSwitch (and ngSwitchCase and ngSwitchDefault — count as one use of structural directives)
+(5 points) Correctly use built-in attribute directive ngStyle, [ngStyle], or [style] to set at least one CSS property
+    - comment card: container and comment loop 
+(5 points) Correctly use built-in attribute directive ngClass, [ngClass], or [class] to set at least one CSS class
+    - GooPreviewCard on the for loop
+(10 points) Correctly use (or implement) at least two categories of of data binding (5 points each). Implementing two of the same category does not satisfy this requirement.
+    One-way binding from component to DOM -> comment card, passes text and username
+    One-way binding from DOM to component, "event binding"
+    Two-way binding -> login screen
+(14 points) Correctly interact with at least one server-side component

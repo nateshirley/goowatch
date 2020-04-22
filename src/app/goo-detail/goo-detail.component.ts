@@ -33,7 +33,12 @@ export class GooDetailComponent implements OnInit {
   }
   // likewise need these functions for the individual Gurus' pages too
   downvote = () => {
-    this.guruService.downvoteGuru(this.user, this.guru.id, this.guru.name);
+    let result = this.guruService.downvoteGuru(
+      this.user,
+      this.guru.id,
+      this.guru.name
+    );
+    console.log(result);
   };
   upvote = () => {
     this.guruService.upvoteGuru(this.user, this.guru.id, this.guru.name);

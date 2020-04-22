@@ -1,10 +1,10 @@
 <!-- JT Graass (jtg4de) -->
 <div class="container">
-  <div *ngFor="let guru of gurus" class="goo-loop">
+  <div *ngFor="let guru of gurus" [ngClass]="'goo-loop'">
     <div>
       <a
         routerLink="/detail/{{ guru.id }}"
-        class="row goo-preview-card align-self-center"
+        [ngClass]="['row', 'goo-preview-card', 'align-self-center']"
       >
         <div class="col-3 no-gutters preview-card-left">
           <div class="preview-card-left-content">
@@ -17,6 +17,7 @@
             <div class="preview-card-score">
               <span>
                 <button
+                  id="down-{{ guru.id }}"
                   class="down-button"
                   (click)="
                     downvote(guru.id, guru.name);
@@ -29,6 +30,7 @@
               ><span id="previewScore-{{ guru.id }}">{{ guru.score }}</span
               ><span
                 ><button
+                  id="up-{{ guru.id }}"
                   class="up-button"
                   (click)="
                     upvote(guru.id, guru.name);
