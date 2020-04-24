@@ -7,6 +7,8 @@ downvoteVanilla = (id) => {
   score = parseInt(score) - 1;
   console.log(targetID);
   document.getElementById(targetID).innerHTML = score;
+  let targetButton = "down-" + id;
+  document.getElementById(targetButton).style.color = "red";
 };
 // enables user to click to increase value of a Guru's ranking
 upvoteVanilla = (id) => {
@@ -16,6 +18,17 @@ upvoteVanilla = (id) => {
   score = parseInt(score) + 1;
   console.log(targetID);
   document.getElementById(targetID).innerHTML = score;
+  let targetButton = "up-" + id;
+  document.getElementById(targetButton).style.color = "green";
+};
+failUp = (id) => {
+  targetButton = "up-" + id;
+  document.getElementById(targetButton).style.color = "Gainsboro";
+};
+failDown = (id) => {
+  console.log("fail");
+  targetButton = "down-" + id;
+  document.getElementById(targetButton).style.color = "Gainsboro";
 };
 // enables user to submit a comment on a Guru's page
 checkCommentVanilla = () => {

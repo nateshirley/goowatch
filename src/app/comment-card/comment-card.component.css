@@ -4,11 +4,8 @@
 }
 .container {
   width: 570px;
-  padding-bottom: 20px;
 }
-.comment-loop {
-  padding-top: 10px;
-}
+
 .comment-text {
   border-radius: 6px;
   border: 0.5px solid rgb(138, 138, 138);

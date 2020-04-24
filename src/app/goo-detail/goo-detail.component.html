@@ -16,6 +16,7 @@
               <div class="preview-card-score">
                 <span>
                   <button
+                    id="down-{{ guru.id }}"
                     class="down-button"
                     (click)="
                       downvote();
@@ -28,6 +29,7 @@
                 ><span id="previewScore-{{ guru.id }}">{{ guru.score }}</span
                 ><span
                   ><button
+                    id="up-{{ guru.id }}"
                     class="up-button"
                     (click)="
                       upvote();

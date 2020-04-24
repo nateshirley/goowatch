@@ -46,7 +46,7 @@ export class AddGuruComponent implements OnInit {
   ];
   // our hypothetical next Guru object. Gets displayed at bottom of page if user clicks submit
   newGuru: Guru = {
-    id: 5,
+    id: 99,
     name: "",
     score: 0,
     category: "",

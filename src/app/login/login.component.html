@@ -1,17 +1,20 @@
-<div class="container">
-  <br />
-  <h1>Goowatch</h1>
-  <form #loginForm="ngForm">
-    <div class="form-group">
-      <label>Username: </label>
-      <input
-        type="text"
-        class="form-control"
-        name="username"
-        id="username"
-        required
-        #username="ngModel"
-        [(ngModel)]="user.username"
+<div>
+  <nav class="navbar navbar-light background">
+    <a class="navbar-brand goowatch"> Goowatch</a>
+  </nav>
+  <div class="container">
+    <br />
+
+    <form #loginForm="ngForm" class="login">
+      <div class="form-group">
+        <label>Username: </label>
+        <input
+          type="text"
+          class="form-control"
+          name="username"
+          required
+          #username="ngModel"
+          [(ngModel)]="user.username"
         (keyup) = "onUsernameType()"
       />
       <small style="color: red;">{{ username_error }}</small>
@@ -44,4 +47,5 @@
   </button>
   <div style="color: rgb(99, 99, 99);"><br />{{ responsedata }}</div>
   {{ secureUser }}
+  </div>
 </div>

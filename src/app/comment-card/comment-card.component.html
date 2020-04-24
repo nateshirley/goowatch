@@ -1,5 +1,5 @@
 <!--  NATHAN SHIRLEY (nes2ta) -->
-<div class="container">
+<div class="container" [ngStyle]="{ 'padding-bottom': '20px' }">
   <div class="comment-cards-outer">
     <div class="form-group comment-submit-group">
       <textarea
@@ -30,7 +30,7 @@
     </div>
     <!-- displays all comments, hence *ngFor to iterate through all comments -->
     <div *ngFor="let c of comments">
-      <div class="comment-loop">
+      <div class="comment-loop" [ngStyle]="{ 'padding-top': '10px' }">
         <div class="comment-card">
           <div class="row comment-card-row user-row">
             <div class="comment-user">{{ c.user }}</div>

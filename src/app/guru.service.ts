@@ -6,6 +6,8 @@ import { Observable, of } from "rxjs";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 declare const upvoteVanilla: any;
 declare const downvoteVanilla: any;
+declare const failDown: any;
+declare const failUp: any;
 
 @Injectable({
   providedIn: "root",
@@ -27,7 +29,7 @@ export class GuruService {
         console.log("Response", data);
         if (data == true) {
           upvoteVanilla(guruID);
-        }
+        } else failUp(guruID);
       },
       (error) => {
         console.log("Error", error);
@@ -41,7 +43,7 @@ export class GuruService {
         console.log("Response", data);
         if (data == true) {
           downvoteVanilla(guruID);
-        }
+        } else failDown(guruID);
       },
       (error) => {
         console.log("Error", error);
