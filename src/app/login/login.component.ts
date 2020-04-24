@@ -7,6 +7,8 @@ import {
   HttpParams,
 } from "@angular/common/http";
 import { Router } from "@angular/router";
+declare const addUsernameLoginListener: any;
+declare const addPasswordLoginListener: any;
 
 @Component({
   selector: "app-login",
@@ -57,4 +59,17 @@ export class LoginComponent implements OnInit {
     this.router.navigate(["gurus"]);
     localStorage.setItem("user", username);
   }
+
+  // Ajax code
+  onUsernameType = () => {
+    var str_sofar = (<HTMLInputElement>document.getElementById("username")).value;
+    console.log(str_sofar);
+    addUsernameLoginListener(str_sofar);
+  };
+
+  onPasswordType = () => {
+    var str_sofar = (<HTMLInputElement>document.getElementById("password")).value;
+    console.log(str_sofar);
+    addPasswordLoginListener(str_sofar);
+  };
 }
