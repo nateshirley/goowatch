@@ -150,3 +150,158 @@ addCommentListener = () => {
     .getElementById("submitComment")
     .addEventListener("click", submitCommentVanilla);
 };
+
+// AJAX CODE 
+// Adding an event listener for the "keyup" event that we used in class for username
+addUsernameLoginListener = (str_sofar) => {
+    // var str_sofar = document.getElementById("fname").value;
+    var backend_url = "http://localhost/goowatch/loginAjax.php";
+    // var backend_url = "loginAjax.php"; // is the relative path (but won't work here since not in same directory)
+    var data = "StringSoFar=" + str_sofar;
+    makeAjaxCall("POST", backend_url, data).then(showHint, errorHandler);
+}
+
+// Adding an event listener for the "keyup" event that we used in class for username
+addPasswordLoginListener = (str_sofar) => {
+    var backend_url = "http://localhost/goowatch/loginAjax.php";
+    // var backend_url = "loginAjax.php"; // is the relative path (but won't work here since not in same directory)
+    var data = "StringSoFar=" + str_sofar;
+    makeAjaxCall("POST", backend_url, data).then(showHint2, errorHandler);
+}
+
+function makeAjaxCall(methodType, url, data_tosend)
+{
+   // 2. Create an instance of an XMLHttpRequest object
+   var promiseObj = new Promise(function(resolve, reject)
+   {
+      xhr = GetXmlHttpObject();
+      if (xhr == null)
+      {
+         alert ("Your browser does not support XMLHTTP!");
+         return;
+      }
+
+      // 6. Make an asynchronous request
+      xhr.open(methodType, url, true);
+
+      // 6.1 set header
+      // application/x-www-form-urlencoded -- send binary data without boundary
+      xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+      // 7. The request is sent to the server
+      xhr.send(data_tosend);
+
+
+      xhr.onreadystatechange = function()
+      {
+         if (xhr.readyState === 4)
+         {
+            if (xhr.status === 200)
+            {
+               console.log("xhr done successfully");
+               var res = xhr.responseText;         // assume response is text
+
+               // callback_fn(res);
+               resolve(res);
+               // 8. Once the response is back the from the backend,
+               //    the callback function is called to update the screen
+               //    (this will be handled by the configuration above)
+
+            } else
+            {
+               console.log("xhr failed");
+               reject(xhr.status);
+            }
+         } else
+         {
+            console.log("xhr processing going on");
+         }
+      }
+   });
+   return promiseObj;
+}
+
+
+function showHint(str)
+{
+   if (str.length == 0)
+   {
+      document.getElementById ("txtHint").innerHTML = "";
+      return;
+   }
+   document.getElementById ("txtHint").innerHTML = "Welcome " + str;
+}
+
+
+function showHint2(str)
+{
+   if (str.length == 0)
+   {
+      document.getElementById ("txtYousay").innerHTML = "";
+      return;
+   }
+  //  rando = jumble(str);
+  //  document.getElementById ("txtYousay").innerHTML = "Here's your password: " + rando;
+  document.getElementById ("txtYousay").innerHTML = "Here's your password: " + str;
+
+}
+
+function getRandomInt(n) {
+  return Math.floor(Math.random() * n);
+}
+
+function jumble(s) 
+{
+  if (s.length == 1){
+    return s;
+  }
+  // source of shuffle subroutine: https://www.codespeedy.com/shuffle-characters-of-a-string-in-javascript/
+  // len = str.length - 35;
+  var arr = s.split('');           // Convert String to array
+  var n = arr.length-35;              // Length of the array
+  // console.log(n);
+  // console.log(s);
+  for(var i=0 ; i<n-1 ; ++i) {
+    var j = getRandomInt(n);       // Get random of [0, n-1]
+    
+    var temp = arr[i];             // Swap arr[i] and arr[j]
+    arr[i] = arr[j];
+    arr[j] = temp;
+  }
+  
+  s = arr.join('');                // Convert Array to string
+  return s;                        // Return shuffled string
+}
+//   for(var i = len - 1; i > 0; i--) {
+//     var j = Math.floor(Math.random() * (i + 1));
+//     var tmp = str[i];
+//     str[i] = str[j];
+//     str[j] = tmp;
+// }
+  // for (var i = 0; i < (len - 1); i++) 
+  // {
+  //     var a = Math.floor(Math.random() * (i + 1) );
+  //     var t = str[a];
+  //     str[i] = str[a];
+  //     str[a] = t;
+
+function errorHandler(statusCode){
+ console.log("failed with status", status);
+}
+
+
+
+function GetXmlHttpObject()
+{
+   // Create an XMLHttpRequest object?
+	
+   if (window.XMLHttpRequest)
+   {  // code for IE7+, Firefox, Chrome, Opera, Safari
+      return new XMLHttpRequest();
+   }
+   if (window.ActiveXObject)
+   { // code for IE6, IE5
+     return new ActiveXObject ("Microsoft.XMLHTTP");
+   }
+   return null;
+}

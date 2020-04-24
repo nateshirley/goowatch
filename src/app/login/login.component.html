@@ -8,9 +8,11 @@
         type="text"
         class="form-control"
         name="username"
+        id="username"
         required
         #username="ngModel"
         [(ngModel)]="user.username"
+        (keyup) = "onUsernameType()"
       />
       <small style="color: red;">{{ username_error }}</small>
     </div>
@@ -20,13 +22,19 @@
         type="password"
         class="form-control"
         name="password"
+        id="password"
         required
         #password="ngModel"
         [(ngModel)]="user.password"
+        (keyup) = "onPasswordType()"
       />
       <small style="color: red;">{{ pass_error }}</small>
     </div>
   </form>
+  <!-- Id's for the Ajax code, where we will display the code retrieved from the backend. -->
+  <p><span id="txtHint"></span></p>
+  <p><span id="txtYousay"></span></p>
+
   <button
     class="btn btn-secondary"
     (click)="login(loginForm.value)"

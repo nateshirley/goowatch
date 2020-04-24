@@ -39,4 +39,5 @@ export class GooPreviewCardComponent implements OnInit {
       console.log(gurus);
     });
   }
+  
 }
